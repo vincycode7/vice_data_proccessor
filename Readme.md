@@ -1,6 +1,6 @@
 This program is used to process the vice dataset for analysis.
 
-usage: processer.py [-h] [--outputname OUTPUTNAME] datapath
+usage: main.py [-h] [--outputname OUTPUTNAME] datapath
 
 positional arguments:
   datapath              Path to data
