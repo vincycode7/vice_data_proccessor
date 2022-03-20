@@ -1,0 +1,14 @@
+{
+    "positive": [
+        "Love",
+        "Care"
+    ],
+    "negative": [
+        "Sad",
+        "Angry"
+    ],
+    "neutral": [
+        "Wow",
+        "Haha"
+    ]
+}

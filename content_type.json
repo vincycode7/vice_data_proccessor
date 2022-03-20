@@ -1,0 +1,17 @@
+{
+    "general_knowledge": [
+        "entertainment"
+    ],
+    "science_nd_religion":[
+        "science",
+        "religion"
+    ],
+    "politics": [
+        "politics",
+        "environment_&_economy"
+    ],
+    "peace_nd_violence": [
+        "peace",
+        "violence_&_crime"
+    ]
+}
