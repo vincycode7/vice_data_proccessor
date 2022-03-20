@@ -1,14 +1,11 @@
 This program is used to process the vice dataset for analysis.
 
-usage: main.py [-h] [--outputname OUTPUTNAME] datapath
-
-positional arguments:
-  datapath              Path to data
+usage: main.py [-h] [--dp DP] [--on ON]
 
 optional arguments:
-  -h, --help            show this help message and exit
-  --outputname OUTPUTNAME
-                        Name to save processed data as
+  -h, --help  show this help message and exit
+  --dp DP     Path to data
+  --on ON     Name to save processed data as
 
 ** Note: ** Dataset is expected to contain at least the following important columns
 ['Post Created', 'Video Share Status', 'Total Views', 'Total Views For All Crossposts', 'Video Length', 
