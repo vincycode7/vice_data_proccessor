@@ -57,7 +57,7 @@ def determine_content_type(all_data):
     pd_frame = pd.Series([general_knowledge,science_nd_religion,politics,peace_nd_violence], index=[["general_knowledge","science_nd_religion","politics","peace_nd_violence"]])
     max_result = pd_frame[pd_frame==pd_frame.max()]
     type_ = max_result.index[0][0]
-    print(all_data["Message"],pd_frame,pd_frame.max(),type_,max_result[type_])
+    # print(all_data["Message"],pd_frame,pd_frame.max(),type_,max_result[type_])
     data_map = [type_] if int(max_result[type_]) != 0 else ["no_label"]
     return pd.Series(data_map, index=["content_type"])
 
@@ -94,6 +94,7 @@ def convert_path_for_win_linux(path_):
         path_ = path_.replace(posixpath.sep,ntpath.sep)
     return path_
 
+# function to open a json file
 def open_json_files(file_name):
     assert ".json" in file_name, "File needs to be of type json"
     with open(file_name) as jsin_file:
@@ -118,8 +119,8 @@ def label_present(all_data):
     for each_cat in signal_categories_keys_:
         for each_signal in labeller_[each_cat]:
             if each_signal in data:
-                print(f"Key is {each_cat} and signal is {each_signal}")
                 label_template_copy[each_cat] += 1
+                # print(f"Key is {each_cat} and signal is {each_signal}")
     # if sum(label_template.values())==0:
     #     label_template["general"] = 1
     # total_signals = sum([label_template[each_cat] for each_cat in signal_categories_keys_])
@@ -132,7 +133,8 @@ if __name__=="__main__":
     parser.add_argument('datapath', type=str, help="Path to data")
     parser.add_argument('--outputname', type=str, default="vice_data_with_signal_category.csv", help="Name to save processed data as")
     args = parser.parse_args()
-    print()
+
+    print("Program Started Running ...")
     # Read JSON signal_categories file
     labeller_ = open_json_files("signal_categories.json")
 
@@ -160,5 +162,6 @@ if __name__=="__main__":
     vice_data3 = vice_data.apply(determine_customer_reaction,axis=1).reindex()
     vice_data = pd.concat([vice_data, vice_data3], axis=1)
     vice_data4 = vice_data.apply(determine_content_type,axis=1).reindex()
-    vice_data = pd.concat([vice_data, vice_data4], axis=1)
+    vice_data = pd.concat([vice_data, vice_data4], axis=1).reindex()
     vice_data.to_csv(outputname)
+    print(f"File output saved as {outputname}.\nProgram Stopped Running.")
