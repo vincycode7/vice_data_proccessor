@@ -1,3 +1,5 @@
+TO Run this program, you are provided with two options
+** 1 (This would only process the data)
 This program is used to process the vice dataset for analysis.
 
 usage: main.py [-h] [--dp DP] [--on ON]
@@ -7,10 +9,14 @@ optional arguments:
   --dp DP     Path to data
   --on ON     Name to save processed data as
 
+** 2 (This would process the data, show visualization and insights )
+Open the notebook.ipynb and run all cells to process data, see visualization and key insights.
+
 ** Note: ** Dataset is expected to contain at least the following important columns
 ['Post Created', 'Video Share Status', 'Total Views', 'Total Views For All Crossposts', 'Video Length', 
 'Message', 'Link Text', 'Likes at Posting','Likes','Comments','Shares','Love','Wow','Haha','Sad', 'Angry', 
 'Care'] 
 
 Result of analysis can be found in: https://datastudio.google.com/reporting/5f526187-6b3c-404c-87bc-97be2b3c7827
+
 Writeup from analysis can be found in: https://docs.google.com/document/d/1LxjQnJccyx_ZPSBNJ7nX9VTJKjG_QxYi/edit?usp=sharing&ouid=116983985507069912443&rtpof=true&sd=true
